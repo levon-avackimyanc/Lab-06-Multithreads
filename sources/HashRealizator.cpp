@@ -28,7 +28,7 @@ void SetLogs() {
                          boost::log::trivial::trace);
 }
 
-void JsonPrinter::NewHash(const std::string &SomeStr, const std::string &hash,
+void JsonPrinter::NewHash(const std::string& SomeStr, const std::string& hash,
                           std::time_t timestamp) {
   std::scoped_lock<std::mutex> lock(mut);
   std::stringstream ss;
@@ -45,5 +45,3 @@ std::ostream& operator<<(std::ostream& out, const JsonPrinter& JP) {
   out << JP.J_Arr.dump(4);
   return out;
 }
-
-

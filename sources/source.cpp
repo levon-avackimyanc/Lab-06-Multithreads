@@ -26,18 +26,19 @@ void HashAlg(JsonPrinter& JP) {
     std::string hash = picosha2::hash256_hex_string(randStr);
     std::time_t timestamp(std::time(nullptr));
     std::string lastSymb = hash.substr(hash.size() - SizeOfPos);
-    if (lastSymb == LastHashPos){
+    if (lastSymb == LastHashPos) {
       BOOST_LOG_TRIVIAL(info) << "0000 founded in hash '" << hash
                               << "' of string '" << randStr << "'";
       if (DoJson) {
         JP.NewHash(randStr, hash, timestamp);
       }
-    }else{
-      BOOST_LOG_TRIVIAL(trace) << "Hash:" << hash << " From string:" << randStr << ";";
+    } else {
+      BOOST_LOG_TRIVIAL(trace)
+          << "Hash:" << hash << " From string:" << randStr << ";";
     }
   }
 }
-void Hashing(const int& argc, char* argv[]){
+void Hashing(const int& argc, char* argv[]) {
   unsigned int ThreadsNumb;
   std::string j_path;
   std::srand(time(nullptr));
@@ -83,7 +84,7 @@ void Hashing(const int& argc, char* argv[]){
   }
 }
 
-int main(int argc, char* argv[]){
+/*int main(int argc, char* argv[]) {
   Hashing(argc, argv);
   return 0;
-}
+}*/
