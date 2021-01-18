@@ -80,7 +80,7 @@ target_link_libraries(
         GTest::gtest_main
 )
 
-target_link_libraries(tests ${PROJECT_NAME})
+target_link_libraries(demo ${PROJECT_NAME})
 
 #if (BUILD_TESTS)
  #   add_executable(tests
