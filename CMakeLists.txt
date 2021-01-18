@@ -81,16 +81,9 @@ target_link_libraries(
         GTest::gtest_main
 )
 
+enable_testing()
+add_test(NAME unit_tests COMMAND tests)
 
-
-#if (BUILD_TESTS)
- #   add_executable(tests
-  #          ${CMAKE_CURRENT_SOURCE_DIR}/tests/test.cpp
-   #         )
-    #target_link_libraries(tests ${PROJECT_NAME} GTest::gtest_main)
-    #enable_testing()
-    #add_test(NAME unit_tests COMMAND tests)
-#endif ()
 
 if (BUILD_COVERAGE)
     set(ENABLE_COVERAGE ON CACHE BOOL "Enable coverage build." FORCE)
