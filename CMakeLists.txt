@@ -64,6 +64,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
         "$<INSTALL_INTERFACE:include>"
         )
+target_link_libraries(demo ${PROJECT_NAME})
 
 target_link_libraries(
         Multithreads
@@ -80,7 +81,7 @@ target_link_libraries(
         GTest::gtest_main
 )
 
-target_link_libraries(demo ${PROJECT_NAME})
+
 
 #if (BUILD_TESTS)
  #   add_executable(tests
