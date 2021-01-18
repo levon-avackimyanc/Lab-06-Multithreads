@@ -44,6 +44,9 @@ add_library(${PROJECT_NAME} STATIC
 
 add_executable(tests
         ${CMAKE_CURRENT_SOURCE_DIR}/tests/test.cpp
+        )
+
+add_executable(demo
         ${CMAKE_CURRENT_SOURCE_DIR}/sources/source.cpp
         )
 
@@ -110,17 +113,3 @@ endif ()
 
 include(CPackConfig.cmake)
 
-#install(TARGETS ${PROJECT_NAME} demo
- #       EXPORT "${PROJECT_NAME}-targets"
-  #      RUNTIME DESTINATION bin
-   #     ARCHIVE DESTINATION lib
-    #    LIBRARY DESTINATION lib
-     #   INCLUDES DESTINATION include
-      #  )
-
-#install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/ DESTINATION include)
-
-#install(EXPORT "${PROJECT_NAME}-targets"
- #       NAMESPACE "${PROJECT_NAME}::"
-  #      DESTINATION "lib/cmake"
-   #     )
