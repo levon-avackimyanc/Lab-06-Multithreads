@@ -3,12 +3,16 @@
 //
 
 #include "HashRealizator.hpp"
+
+const unsigned int Mb = 1024 * 1024;
+const unsigned int OutForm = 4;
+
 void SetLogs() {
   auto FileTraceLog = boost::log::add_file_log(
       boost::log::keywords::file_name =
           "/Users/levon-avakimanc/Labs/lab-06-multithreads/Logs"
           "/Trace_%N.log",
-      boost::log::keywords::rotation_size = 10 * 1024 * 1024,
+      boost::log::keywords::rotation_size = 10 * Mb,
       boost::log::keywords::format =
           "[%TimeStamp%][%Severity%][%ThreadID%]: [%Message%]");
   FileTraceLog->set_filter(boost::log::trivial::severity >=
@@ -42,6 +46,6 @@ void JsonPrinter::NewHash(const std::string& SomeStr, const std::string& hash,
 
 std::ostream& operator<<(std::ostream& out, const JsonPrinter& JP) {
   std::scoped_lock<std::mutex> lock(JP.mut);
-  out << JP.J_Arr.dump(4);
+  out << JP.J_Arr.dump(OutForm);
   return out;
 }

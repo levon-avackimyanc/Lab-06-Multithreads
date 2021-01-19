@@ -13,6 +13,7 @@
 
 std::atomic<bool> WorksContinue = true;
 std::atomic<bool> DoJson = false;
+const unsigned int ZeroThreads = 0;
 
 void Stop(int S) {
   if (S == SIGINT) {
@@ -48,14 +49,14 @@ void Hashing(const int& argc, char* argv[]) {
       break;
     case 2:
       ThreadsNumb = std::atoi(argv[1]);
-      if (ThreadsNumb == 0 ||
+      if (ThreadsNumb == ZeroThreads ||
           ThreadsNumb > std::thread::hardware_concurrency()) {
         throw std::out_of_range(" Wrong number of threads!");
       }
       break;
     case 3:
       ThreadsNumb = std::atoi(argv[1]);
-      if (ThreadsNumb == 0 ||
+      if (ThreadsNumb == ZeroThreads ||
           ThreadsNumb > std::thread::hardware_concurrency()) {
         throw std::out_of_range(" Wrong number of threads!");
       }
