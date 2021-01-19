@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/levon-avackimyanc/Lab-06-Multithreads.svg?branch=wp%2Flab)](https://travis-ci.org/levon-avackimyanc/Lab-06-Multithreads)
-
 # Лабораторная работа №6
 
 ## Задание
