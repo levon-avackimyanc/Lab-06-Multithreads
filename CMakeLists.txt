@@ -44,9 +44,6 @@ add_library(${PROJECT_NAME} STATIC
 
 add_executable(tests
         ${CMAKE_CURRENT_SOURCE_DIR}/tests/test.cpp
-        )
-
-add_executable(demo
         ${CMAKE_CURRENT_SOURCE_DIR}/sources/source.cpp
         )
 
@@ -64,7 +61,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
         "$<INSTALL_INTERFACE:include>"
         )
-target_link_libraries(demo ${PROJECT_NAME})
+target_link_libraries(tests ${PROJECT_NAME})
 
 target_link_libraries(
         Multithreads
